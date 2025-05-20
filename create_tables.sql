@@ -1,4 +1,4 @@
-use tamrin1;
+use samane_ghaza
 create table students(
     name nvarchar(50) not null,
     national_code int not null,
@@ -21,9 +21,11 @@ create table foods(
 );
 create table ordered_foods(
     food_id int not null,
-    owner_id int not null,
+    student_id int,
+    professor_id int ,
+    quantity int,
     foreign key (food_id) references foods(id),
-    foreign key (owner_id) references students(student_id),
-    foreign key (owner_id) references professors(professor_id)
+    foreign key (student_id) references students(student_id),
+    foreign key (professor_id) references professors(professor_id)
 
 );
